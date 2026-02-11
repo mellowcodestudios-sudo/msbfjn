@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RebuyOps – Retention Systems for D2C Supplement Brands</title>
+  <meta name="description"
+    content="We build automated refill and retention systems for Shopify-based supplement brands to increase repeat purchases and LTV.">
+  <link rel="canonical" href="https://rebuyops.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f172a'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='20' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / WhatsApp / Social Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rebuyops.com/">
+  <meta property="og:title" content="RebuyOps – Retention Systems for D2C Supplement Brands">
+  <meta property="og:description"
+    content="We build automated refill and retention systems for Shopify-based supplement brands to increase repeat purchases and LTV.">
+  <meta property="og:image" content="https://rebuyops.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RebuyOps – Retention Systems for D2C Supplement Brands">
+  <meta name="twitter:description" content="Automated refill & retention systems for D2C supplement brands.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ──────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #111111;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ── Container ──────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Typography ─────────────────────────────────────── */
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.25;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Section Label Pills ── */
+    .section-label {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .section-header {
+      text-align: center;
+    }
+
+    /* ── Buttons ────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.25s ease, transform 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .btn:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* ── Fade-in Animation ──────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── NAV ────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+    }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      padding: 10px 22px;
+      border-radius: 5px;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding: 160px 0 100px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      max-width: 820px;
+      margin: 0 auto 24px;
+      color: #111111;
+    }
+
+    .hero .sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: #555555;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+    }
+
+    .hero .cta-wrap {
+      margin-bottom: 16px;
+    }
+
+    .hero .cta-note {
+      font-size: 0.8125rem;
+      color: #888888;
+      margin-top: 14px;
+    }
+
+    /* ── PROBLEM ────────────────────────────────────────── */
+    .problem {
+      background: #f5f5f5;
+      padding: 100px 0;
+    }
+
+    .problem-list {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .problem-list li {
+      position: relative;
+      padding: 18px 0 18px 36px;
+      font-size: 1.0625rem;
+      color: #333333;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .problem-list li:last-child {
+      border-bottom: none;
+    }
+
+    .problem-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #0f172a;
+      border-radius: 50%;
+    }
+
+    /* ── REBUY ENGINE (Timeline) ────────────────────────── */
+    .engine {
+      padding: 100px 0;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 12px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #e0e0e0;
+    }
+
+    .tl-item {
+      position: relative;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .tl-dot {
+      width: 16px;
+      height: 16px;
+      background: #0f172a;
+      border-radius: 50%;
+      margin: 20px auto 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tl-day {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .tl-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #111111;
+    }
+
+    .tl-desc {
+      font-size: 0.8125rem;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    /* ── HOW WE WORK ───────────────────────────────────── */
+    .howwework {
+      background: #f5f5f5;
+      padding: 100px 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-top: 3px solid #0f172a;
+      border-radius: 8px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 1.125rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .step-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111111;
+    }
+
+    /* ── QUALIFICATION ──────────────────────────────────── */
+    .qualification {
+      padding: 100px 0;
+    }
+
+    .qual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .qual-col {
+      padding: 36px 32px;
+      border-radius: 10px;
+    }
+
+    .qual-col.positive {
+      background: #f0f7f4;
+      border: 1px solid #d1e7dd;
+    }
+
+    .qual-col.negative {
+      background: #f8f6f4;
+      border: 1px solid #e5e0da;
+    }
+
+    .qual-col h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #111111;
+    }
+
+    .qual-col.positive h3 {
+      color: #0f172a;
+    }
+
+    .qual-col.negative h3 {
+      color: #555555;
+    }
+
+    .qual-col li {
+      position: relative;
+      padding: 10px 0 10px 28px;
+      font-size: 0.9375rem;
+      color: #333333;
+    }
+
+    .qual-col.positive li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .qual-col.negative li::before {
+      content: '✗';
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: #999999;
+    }
+
+    /* ── AUDIT FORM ────────────────────────────────────── */
+    .audit {
+      background: #f5f5f5;
+      padding: 100px 0;
+    }
+
+    .form-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 48px 40px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #111111;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #111111;
+      transition: border-color 0.2s ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #0f172a;
+    }
+
+    .form-group input::placeholder {
+      color: #9ca3af;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    .form-btn {
+      width: 100%;
+      margin-top: 8px;
+      font-size: 1rem;
+      padding: 16px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .form-success p {
+      color: #555555;
+      font-size: 1rem;
+    }
+
+    .form-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* ── TOAST ──────────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #111111;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-family: 'Inter', sans-serif;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+      max-width: 90vw;
+      text-align: center;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.error {
+      background: #dc2626;
+    }
+
+    /* ── WHATSAPP FLOAT ────────────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    .wa-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #ffffff;
+    }
+
+    /* ── FORM SUBTEXT ──────────────────────────────────── */
+    .form-subtext {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #888888;
+      margin-top: -32px;
+      margin-bottom: 36px;
+    }
+
+    /* ── TESTIMONIALS ──────────────────────────────────── */
+    .testimonials {
+      padding: 100px 0;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testi-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testi-stars {
+      color: #f59e0b;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .testi-quote {
+      font-size: 0.9375rem;
+      color: #333333;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .testi-metric {
+      background: #f0f7f4;
+      border: 1px solid #d1e7dd;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+    }
+
+    .testi-metric-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+
+    .testi-metric-label {
+      font-size: 0.75rem;
+      color: #555555;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111111;
+    }
+
+    .testi-role {
+      font-size: 0.8125rem;
+      color: #555555;
+    }
+
+    /* ── STATS STRIP ────────────────────────────────────── */
+    .stats-strip {
+      padding: 64px 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .stats-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .strip-stat {
+      padding: 0 16px;
+    }
+
+    .strip-stat:not(:last-child) {
+      border-right: 1px solid #e0e0e0;
+    }
+
+    .strip-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .strip-label {
+      font-size: 0.875rem;
+      color: #555555;
+      font-weight: 500;
+    }
+
+    /* ── STEP DESCRIPTIONS ──────────────────────────────── */
+    .step-card p {
+      margin-top: 10px;
+      font-size: 0.8125rem;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    /* ── FAQ ────────────────────────────────────────────── */
+    .faq {
+      padding: 100px 0;
+    }
+
+    .faq-list {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111111;
+      text-align: left;
+      cursor: pointer;
+      gap: 16px;
+    }
+
+    .faq-q:hover {
+      color: #0f172a;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: #0f172a;
+      border-radius: 1px;
+    }
+
+    .faq-icon::before {
+      width: 20px;
+      height: 2px;
+      top: 9px;
+      left: 0;
+    }
+
+    .faq-icon::after {
+      width: 2px;
+      height: 20px;
+      top: 0;
+      left: 9px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-icon::after {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-a-inner {
+      padding: 0 0 20px;
+      font-size: 0.9375rem;
+      color: #555555;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+    }
+
+    /* ── CLOSING CTA ────────────────────────────────────── */
+    .closing-cta {
+      background: #0f172a;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .closing-cta h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .closing-cta p {
+      color: #94a3b8;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: #ffffff;
+      color: #0f172a;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-white:hover {
+      background: #f1f5f9;
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: #111111;
+      color: #ffffff;
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: #999999;
+      margin-bottom: 28px;
+    }
+
+    .footer-contact {
+      font-size: 0.875rem;
+      color: #cccccc;
+      margin-bottom: 6px;
+    }
+
+    .footer-contact a {
+      color: #cccccc;
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links {
+      margin-top: 28px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: #999999;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-copy {
+      margin-top: 28px;
+      font-size: 0.75rem;
+      color: #666666;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timeline {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 36px;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .stats-strip-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .strip-stat:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 28px;
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 130px 0 72px;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 36px;
+      }
+
+      .problem,
+      .engine,
+      .howwework,
+      .qualification,
+      .audit,
+      .faq,
+      .testimonials {
+        padding: 72px 0;
+      }
+
+      .stats-strip {
+        padding: 48px 0;
+      }
+
+      .closing-cta {
+        padding: 56px 0;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin: 0 auto;
+        padding-left: 40px;
+        position: relative;
+      }
+
+      .timeline::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 26px;
+        width: 3px;
+        background: #e0e0e0;
+      }
+
+      .tl-item {
+        text-align: left;
+        padding: 0 0 0 0;
+      }
+
+      .tl-dot {
+        position: absolute;
+        left: -40px;
+        margin: 0;
+        top: 4px;
+      }
+
+      .tl-item {
+        position: relative;
+        margin-bottom: 8px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .qual-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-wrap {
+        padding: 32px 24px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ───── NAV ───── -->
+  <nav>
+    <div class="container">
+      <a href="#" class="nav-logo">RebuyOps</a>
+      <a href="#audit" class="btn nav-cta">Request Audit</a>
+    </div>
+  </nav>
+
+  <!-- ───── HERO ───── -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1 class="reveal">Automated Refill &amp; Retention Systems for D2C Supplement Brands</h1>
+      <p class="sub reveal">Increase repeat purchases in 30–45 days without increasing ad spend.</p>
+      <div class="cta-wrap reveal">
+        <a href="#audit" class="btn">Request Free Retention Audit</a>
+      </div>
+      <p class="cta-note reveal">Built for Shopify-based supplement brands doing ₹5L+ per month.</p>
+    </div>
+  </section>
+
+  <!-- ───── STATS STRIP ───── -->
+  <section class="stats-strip" id="stats">
+    <div class="container">
+      <div class="stats-strip-grid reveal">
+        <div class="strip-stat">
+          <div class="strip-value">30+</div>
+          <div class="strip-label">Brands Audited</div>
+        </div>
+        <div class="strip-stat">
+          <div class="strip-value">2.4x</div>
+          <div class="strip-label">Avg LTV Increase</div>
+        </div>
+        <div class="strip-stat">
+          <div class="strip-value">₹1.2 Cr+</div>
+          <div class="strip-label">Revenue Retained</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── PROBLEM ───── -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <div class="section-header reveal"><span class="section-label">The Problem</span></div>
+      <h2 class="section-title reveal">Most Supplement Brands Leak Revenue After the First Purchase</h2>
+      <ul class="problem-list reveal">
+        <li>No structured 25–30 day refill flow</li>
+        <li>Weak post-purchase engagement</li>
+        <li>Low subscription adoption</li>
+        <li>Over-reliance on paid ads</li>
+        <li>No behavioral retention segmentation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ───── REBUY ENGINE ───── -->
+  <section class="engine" id="engine">
+    <div class="container">
+      <div class="section-header reveal"><span class="section-label">Our Process</span></div>
+      <h2 class="section-title reveal">The 30-Day Rebuy Engine</h2>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <span class="tl-day">Day 0</span>
+          <div class="tl-dot"></div>
+          <h3 class="tl-title">Confirmation Optimization</h3>
+          <p class="tl-desc">Upsell logic &amp; structured confirmation sequencing.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">Day 5</span>
+          <div class="tl-dot"></div>
+          <h3 class="tl-title">Usage Education</h3>
+          <p class="tl-desc">Reinforce product usage &amp; reduce churn.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">Day 15</span>
+          <div class="tl-dot"></div>
+          <h3 class="tl-title">Results Reinforcement</h3>
+          <p class="tl-desc">Social proof &amp; habit anchoring.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">Day 22</span>
+          <div class="tl-dot"></div>
+          <h3 class="tl-title">Refill Trigger</h3>
+          <p class="tl-desc">Pre-refill behavioral engagement.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">Day 25</span>
+          <div class="tl-dot"></div>
+          <h3 class="tl-title">WhatsApp Reorder Automation</h3>
+          <p class="tl-desc">Direct reorder prompt via WhatsApp.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">Day 30</span>
+          <div class="tl-dot"></div>
+          <h3 class="tl-title">Subscription Push</h3>
+          <p class="tl-desc">Convert repeat buyers into subscribers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── HOW WE WORK ───── -->
+  <section class="howwework" id="howwework">
+    <div class="container">
+      <div class="section-header reveal"><span class="section-label">Your Journey</span></div>
+      <h2 class="section-title reveal">How We Work</h2>
+      <div class="steps-grid reveal">
+        <div class="step-card">
+          <span class="step-num">1</span>
+          <h3>Retention Gap Audit</h3>
+          <p>We analyze your post-purchase flow, refill timing, and churn points to find exactly where revenue is
+            leaking.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">2</span>
+          <h3>System Architecture</h3>
+          <p>We design a custom retention engine mapped to your product cycle, customer behavior, and brand voice.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">3</span>
+          <h3>Shopify + Email + WhatsApp Integration</h3>
+          <p>We deploy the full system across your Shopify store, email sequences, and WhatsApp automations.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">4</span>
+          <h3>Optimization &amp; Monitoring</h3>
+          <p>We monitor repeat purchase rates, tweak triggers, and continuously optimize for higher LTV.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── TESTIMONIALS ───── -->
+  <section class="testimonials" id="results">
+    <div class="container">
+      <div class="section-header reveal"><span class="section-label">Results</span></div>
+      <h2 class="section-title reveal">What Brand Founders Are Saying</h2>
+      <div class="testi-grid reveal">
+
+        <div class="testi-card">
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"We were spending ₹4L/month on ads but only 8% of customers came back. RebuyOps set
+              up our entire refill flow — WhatsApp reminders, email sequences, subscription nudges. Within 6 weeks, we
+              saw a completely different repeat purchase pattern."</p>
+          </div>
+          <div class="testi-metric">
+            <div class="testi-metric-value">2.6x</div>
+            <div class="testi-metric-label">Repeat Purchase Rate Increase</div>
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">RK</div>
+            <div>
+              <div class="testi-name">Rahul Kapoor</div>
+              <div class="testi-role">Founder, Men's Wellness D2C Brand</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"I knew our post-purchase emails were weak but didn't have the bandwidth to fix it.
+              They rebuilt everything in under 2 weeks — the 30-day engine, subscription push, even the WhatsApp reorder
+              flow. The results speak for themselves."</p>
+          </div>
+          <div class="testi-metric">
+            <div class="testi-metric-value">₹18.4L</div>
+            <div class="testi-metric-label">Retained Revenue in 90 Days</div>
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">PS</div>
+            <div>
+              <div class="testi-name">Priya Sharma</div>
+              <div class="testi-role">Co-founder, Ayurvedic Supplements Brand</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"We had a good product but zero retention strategy. RebuyOps identified that our Day
+              22–25 window was critical and built the entire automation around it. Our subscription adoption went from
+              4% to almost 19% in two months."</p>
+          </div>
+          <div class="testi-metric">
+            <div class="testi-metric-value">4.7x</div>
+            <div class="testi-metric-label">Subscription Adoption Growth</div>
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">AM</div>
+            <div>
+              <div class="testi-name">Arjun Mehta</div>
+              <div class="testi-role">CEO, Sports Nutrition D2C Brand</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── QUALIFICATION ───── -->
+  <section class="qualification" id="qualification">
+    <div class="container">
+      <div class="section-header reveal"><span class="section-label">Qualification</span></div>
+      <h2 class="section-title reveal">Who We Work With</h2>
+      <div class="qual-grid reveal">
+        <div class="qual-col positive">
+          <h3>We work with:</h3>
+          <ul>
+            <li>Shopify-based supplement brands</li>
+            <li>₹5L+ monthly revenue</li>
+            <li>Brands running paid acquisition</li>
+          </ul>
+        </div>
+        <div class="qual-col negative">
+          <h3>We do not work with:</h3>
+          <ul>
+            <li>Idea-stage brands</li>
+            <li>Non-ecommerce businesses</li>
+            <li>Dropshipping stores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── AUDIT FORM ───── -->
+  <section class="audit" id="audit">
+    <div class="container">
+      <div class="section-header reveal"><span class="section-label">Get Started</span></div>
+      <h2 class="section-title reveal">Request a Free Retention Audit</h2>
+      <p class="form-subtext reveal">Takes 2 minutes. No commitment required.</p>
+      <div class="form-wrap reveal">
+        <form id="auditForm" action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="brandName">Brand Name</label>
+            <input type="text" id="brandName" name="brandName" placeholder="Your brand name" required>
+          </div>
+          <div class="form-group">
+            <label for="websiteUrl">Website URL</label>
+            <input type="url" id="websiteUrl" name="websiteUrl" placeholder="https://yourbrand.com" required>
+          </div>
+          <div class="form-group">
+            <label for="revenue">Monthly Revenue</label>
+            <select id="revenue" name="revenue" required>
+              <option value="" disabled selected>Select range</option>
+              <option value="5L-10L">₹5L–₹10L</option>
+              <option value="10L-25L">₹10L–₹25L</option>
+              <option value="25L-50L">₹25L–₹50L</option>
+              <option value="50L+">₹50L+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@brand.com" required>
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <button type="submit" class="btn form-btn">Request Audit</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Thank you!</h3>
+          <p>We've received your request. Our team will reach out within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── FAQ ───── -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Frequently Asked Questions</h2>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            How long does it take to set up the retention system?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Most systems are fully deployed within 10–14 days. This includes the audit, system
+              design, and integration across Shopify, email, and WhatsApp.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Do you work with brands outside supplements?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Currently, we specialize exclusively in D2C supplement brands. This focus allows us
+              to build highly optimized systems around the 25–30 day refill cycle unique to supplements.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            What does the retention audit include?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">We analyze your post-purchase email flows, refill timing gaps, subscription
+              adoption rate, repeat purchase rate, and customer LTV. You receive a detailed report with specific
+              recommendations.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            What's the pricing?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Pricing depends on your brand's scale and the scope of systems required. The
+              initial audit is completely free. After that, we'll share a tailored proposal based on your retention
+              gaps.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Will this work if I'm already using Klaviyo or another email tool?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes. We integrate with your existing tools — Klaviyo, Mailchimp, GoKwik, Wati, or
+              whatever you're using. We don't replace your stack, we optimize and layer retention systems on top of it.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── CLOSING CTA ───── -->
+  <section class="closing-cta">
+    <div class="container reveal">
+      <h2>Ready to Stop Losing Repeat Revenue?</h2>
+      <p>Get a free retention audit and see exactly where your brand is leaking LTV.</p>
+      <a href="#audit" class="btn-white">Request Free Retention Audit</a>
+    </div>
+  </section>
+
+  <!-- ───── FOOTER ───── -->
+  <footer>
+    <div class="container">
+      <div class="footer-brand">RebuyOps</div>
+      <p class="footer-tagline">Retention Systems for D2C Supplement Brands</p>
+      <p class="footer-contact">Phone: <a href="tel:+916391969967">6391969967</a></p>
+      <p class="footer-contact">Email: <a href="mailto:apoorv@rebuyops.com">apoorv@rebuyops.com</a></p>
+      <div class="footer-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 RebuyOps. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ───── Toast container ───── -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ───── WhatsApp floating button ───── -->
+  <a href="https://wa.me/916391969967?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20RebuyOps%20retention%20systems."
+    target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ───── JS: Scroll Reveal ───── -->
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      function check() {
+        var trigger = window.innerHeight * 0.88;
+        els.forEach(function (el) {
+          if (el.getBoundingClientRect().top < trigger) {
+            el.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', check, { passive: true });
+      window.addEventListener('load', check);
+      check();
+    })();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        // close all
+        document.querySelectorAll('.faq-item.open').forEach(function (el) { el.classList.remove('open'); });
+        // toggle current
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+  <!-- ───── JS: Firebase Form Submission ───── -->
+  <script type="module">
+    import { db } from './firebase-config.js';
+    import { collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js';
+
+    const form = document.getElementById('auditForm');
+    const successEl = document.getElementById('formSuccess');
+    const toastEl = document.getElementById('toast');
+
+    function showToast(msg, isError) {
+      toastEl.textContent = msg;
+      toastEl.className = 'toast show' + (isError ? ' error' : '');
+      setTimeout(function () { toastEl.className = 'toast'; }, 4000);
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn = form.querySelector('.form-btn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+
+      try {
+        await addDoc(collection(db, 'audit_requests'), {
+          fullName: form.fullName.value.trim(),
+          brandName: form.brandName.value.trim(),
+          websiteUrl: form.websiteUrl.value.trim(),
+          revenue: form.revenue.value,
+          email: form.email.value.trim(),
+          whatsapp: form.whatsapp.value.trim(),
+          status: 'new',
+          createdAt: serverTimestamp()
+        });
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+      } catch (err) {
+        console.error('Firestore write failed:', err);
+        showToast('Something went wrong. Please try again.', true);
+        btn.disabled = false;
+        btn.textContent = 'Request Audit';
+      }
+    });
+  </script>
+</body>
+
+</html>
